@@ -109,12 +109,14 @@ body{
     background-color: rgb(41,43,44);
     color:rgb(189,162,83);
     font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
 }
 .titre
 {
  font-family: 'Ultra', serif;
  font-size:2em;
 }
+
 
 
 

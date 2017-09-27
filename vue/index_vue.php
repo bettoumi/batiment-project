@@ -4,12 +4,12 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <header >
+        <header  class="mb-5">
             <h1 class="text-center  titre mt-5">PROJETS</h1>
          
         </header>
-        <div class="d-flex flex-row-reverse w-25">
-              <button type="button"  class="btn btn-success">AJouter un  projet</button>
+        <div class="d-flex flex-row-reverse mr-5 mb-5">
+              <a href="../controleur/add_project.php"  role="button" class="p-2 btn btn-outline-warning ">AJouter un  projet</a>
 
         </div>
         <div class="container">
