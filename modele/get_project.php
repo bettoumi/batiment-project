@@ -32,5 +32,12 @@
        return $req;
 
    }
+   function affiche_tache()
+   {
+   	     $bdd= connex_bdd();
+   	     $req=$bdd->query('SELECT * FROM taches ');
+         
+         return $req;
+   }
 
 ?>

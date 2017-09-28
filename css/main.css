@@ -133,7 +133,20 @@ body{
      
      float: right;   
      font-family: 'Glyphicons Halflings';
- }   
+ }  
+.list-group-item 
+{
+    position: relative;
+}
+
+ .supprimer-tache 
+ {
+
+    float: right;
+    position:absolute;
+    right: 40px;
+    top:20px;
+ }
 
 
 @media (min-width:720px)
@@ -141,7 +154,7 @@ body{
    .titre
 {
  
- font-size:3.5em;
+ font-size:3em;
 }
 
 }
