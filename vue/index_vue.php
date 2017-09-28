@@ -24,7 +24,7 @@
                 <p class="card-text titre-projet"><?php echo $project['nom']?></p>
                 <a href="#"><i class="fa fa-trash-o mr-5"></i>
                 </a>
-                <a href="../controleur/detail_project.php?id=<?php echo $project['id'];?>" class="btn ml-5">details</a>
+                <a href="../controleur/detail_project.php?id=<?php echo $project['id'] ;?>&amp;titre=<?php echo $project['nom'] ;?>" class="btn ml-5">details</a>
               </div>
           </div>
           <?php

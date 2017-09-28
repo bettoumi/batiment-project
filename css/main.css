@@ -129,6 +129,12 @@ body{
     font-weight: bold;
 }
 
+.supprimer {
+     
+     float: right;   
+     font-family: 'Glyphicons Halflings';
+ }   
+
 
 @media (min-width:720px)
 {
