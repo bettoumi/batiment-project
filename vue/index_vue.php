@@ -1,31 +1,35 @@
 
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
+        
         <header  class="mb-5">
             <h1 class="text-center  titre mt-5">PROJETS</h1>
          
         </header>
+
         <div class="d-flex flex-row-reverse mr-5 mb-5">
               <a href="../controleur/add_project.php"  role="button" class="p-2 btn btn-outline-warning ">AJouter un  projet</a>
 
         </div>
-        <div class="container">
-           
-             <div class="list-group row ">
 
-              <a href="#" class="list-group-item list-group-item-action   flex-column align-items-start active col col-md-6 col-l-4">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">titre project</h5>
-                  <small>3 days ago</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              </a>
-              
-            </div>
-           </div>
+
+        <div class="container">
+         <div class="row justify-content-around">
+         <?php
+           while($project=$req->fetch())
+           {
+
+            ?>
+           <div class="card project col-12  mb-5 col-md-6 col-lg-3">
+              <div class="card-block">
+               
+                <p class="card-text titre-projet"><?php echo $project['nom']?></p>
+                <a href="#"><i class="fa fa-trash-o mr-5"></i>
+                </a>
+                <a href="../controleur/detail_project.php?id=<?php echo $project['id'];?>" class="btn ml-5">details</a>
+              </div>
+          </div>
+          <?php
+          }
+          ?>
+         </div>
         </div>
+        

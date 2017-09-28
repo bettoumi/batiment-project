@@ -117,8 +117,17 @@ body{
  font-size:2em;
 }
 
-
-
+.project
+{
+    /*height: 100px;*/
+    /*max-width: 250px;*/
+     font-size: 15px;
+}
+.titre-projet
+{
+    font-size: 18px;
+    font-weight: bold;
+}
 
 
 @media (min-width:720px)
