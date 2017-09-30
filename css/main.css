@@ -138,14 +138,20 @@ body{
 {
     position: relative;
 }
+.ajouter-tache
+{
 
+    float: right;
+    padding: 0rem;
+
+}
  .supprimer-tache 
  {
 
     float: right;
     position:absolute;
     right: 40px;
-    top:20px;
+    top:25px;
  }
 
 
