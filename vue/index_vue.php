@@ -102,8 +102,13 @@
 
 
                                 <!-- END MODAL  -->
-
-                <a href="../controleur/detail_project.php?id=<?php echo $project['id'] ;?>&amp; titre=<?php echo $project['nom'] ;?>" class="btn ml-5">details</a>
+                 
+               <!--   <form action="add_project.php" method="post" >
+                   <input type="hidden" name="idp" value="<?php echo $project['id'] ;?>">
+                    <input type="hidden" name="nomp" value="<?php echo $project['nom'] ;?>">
+                    <button type="submit">détails</button>
+                 </form> -->
+                <a href="add_project.php?id=<?php echo $project['id'] ;?>&amp; titre=<?php echo $project['nom'] ;?>" class="btn ml-5">details</a>
 
               </div>
           </div>

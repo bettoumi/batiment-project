@@ -1,5 +1,27 @@
 <?php
 require '../modele/get_project.php';
+include_once '../vue/template/header.php';
+ 
+
+if(isset($_GET['id']) AND isset($_GET['titre']))
+{ $id_project=htmlspecialchars($_GET['id']);
+ $nom_project=htmlspecialchars($_GET['titre']);
+ // idetape=htmlspecialchars($_POST['idetape']);
+ // echo $idetape;
+   
+  
+  
+   $steps=affich_etape($id_project);
+   $req2=affiche_tache();
+ // header('location:add_project.php');
+ 
+}
+
+
+
+
+
+
               ///ADD PROJECT IN DATABASE
   //////////////////////////////////////////////////////////////////////////
 if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut']) AND isset($_POST['date_rendu']) )
@@ -31,7 +53,7 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
  var_dump( $idprojet);
 
   add_etape($nometape, $idprojet);
-   header('location: detail_project.php');
+   // header('location: add_project.php');
   
 }
  
@@ -47,7 +69,8 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
  
 
   add_tache($nomtache, $idetape, $idprojet);
-  header('location: add_project.php');
+    // header('location: add_project.php?id=echo $id_project; &amp; titre= echo $nom_project ;');
+   // var_dump($)
   
 }
 
@@ -62,6 +85,7 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
     
 
      supprimer_etape($idetapesup, $idproject_etape);
+     // header('location: add_project.php');
 
 
   }
@@ -77,7 +101,7 @@ if(isset($_POST['idtache'])AND isset($_POST['idetape']))
 
      supprimer_tache($idtache, $idetape);
 
-
+       // header('location: add_project.php');
   }
    	
   	// DELETE a project and its steps and tasks
@@ -88,10 +112,10 @@ if(isset($_POST['idprojetsup']))
 
     $idprojetsup=htmlspecialchars($_POST['idprojetsup']);
      supprimer_projet($idprojetsup);
-  header('location: index_vue.php');
+    header('location: index.php');
 }
 
    	
-
-?>
+include_once '../vue/detailproject_vue.php';
+include_once '../vue/template/footer.php';
  

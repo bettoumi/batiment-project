@@ -28,7 +28,7 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <form action="add_project.php" method="post">
+			        <form action="" method="post">
 			          <div class="form-group">
 			            <label for="nometape" class="form-control-label">Nometape:</label>
 			            <input type="text" class="form-control" name="nometape" id="recipient-name">
@@ -87,15 +87,15 @@
 			        </button>
 			      </div>
 			      <div class="modal-body">
-			        <form action="add_project.php" method="post">
+			        <form action="" method="post">
 
 			          <div class="form-group">
 			            <label for="nomtache" class="form-control-label">Nom tache:</label>
-			            <input type="text"  name ="nomtache" class="form-control" id="recipient1-name">
+			            <input type="text"  name="nomtache" class="form-control" id="recipient1-name">
 			          </div>
                          
-			            <input type="hidden"  name ="idetape" value="<?php echo $step['id']; ?>" class="form-control" id="recipient3-name">
-			            <input type="hidden"  name ="idprojet"  value="<?php echo $step['idprojet']; ?>" class="form-control" id="recipient2-name">
+			            <input type="hidden"  name="idetape" value="<?php echo $step['id']; ?>" class="form-control" id="recipient3-name">
+			            <input type="hidden"  name="idprojet"  value="<?php echo $step['idprojet']; ?>" class="form-control" id="recipient2-name">
 			              <button  type="submit" class="btn">Ajouter</button>
 			        </form>
 			      </div>
