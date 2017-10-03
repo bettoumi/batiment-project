@@ -2,11 +2,52 @@
 
 <header  class="mb-5">
             <h1 class="text-center  titre mt-5"><?php echo $nom_project?></h1>
+
 </header>
             <!-- DISPLAY STEPS OF PROJECT -->
 <div class="container w-50">
- 
- <div id="accordion" role="tablist" aria-multiselectable="true">
+             		<!-- button add steps -->
+             <!-- ///////////////////////////////////: -->
+
+            <div class="mx-auto mb-5" style="width: 200px;">
+             <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="projet:<?php echo $nom_project?>">ajouter etape</button>
+			
+            </div>
+			            <!-- madal add steps -->
+             <!-- ///////////////////////////////////: -->
+
+            
+
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Ajout-etape</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        <form action="add_project.php" method="post">
+			          <div class="form-group">
+			            <label for="nometape" class="form-control-label">Nometape:</label>
+			            <input type="text" class="form-control" name="nometape" id="recipient-name">
+			          </div>
+			          <input type="hidden" name="idprojet" value="<?php echo $id_project; ?>">
+			               <button type="submit" class="btn">Ajouter</button>
+			        </form>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+              <!-- end modal for add steps -->
+ <div id="accordion" role="tablist" aria-multiselectable="true" >
  <?php 
     foreach($steps as $step)
   
@@ -73,7 +114,37 @@
 
 			             <!-- ///////////////////////////////////////////
 			    -->
-			        <i class="fa fa-trash supprimer" aria-hidden="true" onclick="supprimer();"></i>
+
+			    			<!--button for delete steps ==============================================  -->
+
+			    			<button type="button" class="btn supprimer" data-toggle="modal" data-target="#supp<?php echo $step['id'];?>" data-whatever="suppetap"><i class="fa fa-trash ml-5" aria-hidden="true"></i></button>
+
+
+						<div class="modal fade" id="supp<?php echo $step['id'];?>" tabindex="-1" role="dialog" aria-labelledby="supetape<?php echo $step['id'];?>" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="suppetape<?php echo $step['id'];?>">voulez vous supprimer cette etape</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        <form action="add_project.php" method="post">
+						          <input type="hidden" name="idetapesup" value="<?php echo $step['id'];?> ">
+						          <input type="hidden" name="idproject_etape" value="<?php echo $id_project;?> ">
+
+						             <button type="submit" class="btn">Supprimer</button>
+						        </form>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						       
+						      </div>
+						    </div>
+						  </div>
+						</div>
+			        
 
 			      </h5>
 		 	</div>
@@ -102,7 +173,40 @@
 		             ?>
 		            <li class="list-group-item list-group-item-success">
 						<?php echo $tache["nomtache"]; ?>
-                      <i class="fa fa-trash supprimer-tache" aria-hidden="true" onclick="supprimer();"></i>
+
+						<!--  BUTTON  FOR  DELETE spots -->
+                      
+
+                          <button type="button" class="btn supprimer-tache" data-toggle="modal" data-target="#supp<?php echo $tache['id'] ;?>" data-whatever="<?php echo $tache['nomtache'] ;?>"><i class="fa fa-trash" aria-hidden="true"></i>
+							</button>
+
+
+						<div class="modal fade" id="supp<?php echo $tache['id'] ;?>" tabindex="-1" role="dialog" aria-labelledby="supp<?php echo $tache['id'] ;?>" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="sup<?php echo $tache['id'] ;?>">voulez vous supprimer cette tache</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        <form action="add_project.php" method="post">
+						          <input type="hidden" name="idtache" value="<?php echo $tache['id'];?> ">
+						          <input type="hidden" name="idetape" value="<?php echo $step['id'];?> ">
+
+						             <button type="submit" class="btn">Supprimer</button>
+						        </form>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						       
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+                         <!-- end modal for delete spots -->
 		            </li>
            </ul>
 			<?php 

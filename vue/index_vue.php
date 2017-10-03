@@ -55,7 +55,8 @@
 
         </div>
 
-
+                              <!--Display all project-->
+                      <!-- ///////////////////////////////// -->
         <div class="container">
          <div class="row justify-content-around">
          <?php
@@ -66,10 +67,44 @@
            <div class="card project col-12 mr-2 mb-3 col-md-6 col-lg-3">
               <div class="card-block">
                
-                <p class="card-text titre-projet"><?php echo $project['nom']?></p>
-                <a href="#"><i class="fa fa-trash-o mr-5"></i>
-                </a>
+                <p class="card-text titre-projet"><?php echo $project['nom'];?></p>
+
+                   <!-- BUTTON AND MODAL DELETE PROJECT -->
+
+                      <button type="button" class="btn supprimer-projet" data-toggle="modal" data-target="#del<?php echo $project['id']?>" data-whatever="@mdo"><i class="fa fa-trash-o mr-5"></i>
+                    </button>
+
+
+                       <div class="modal fade" id="del<?php echo $project['id']?>" tabindex="-1" role="dialog" aria-labelledby="deletModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="deletModalLabel">voulez-vous supprimer ce projet?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="add_project.php" method="post">
+                                                               
+                                  <input type="hidden" class="form-control" id="recipient-name"  value="<?php echo $project['id'] ;?>" name="idprojetsup">
+                                 
+                                   <button type="submit" class="btn">supprimer</button>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn" data-dismiss="modal">Close</button>
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+
+
+                                <!-- END MODAL  -->
+
                 <a href="../controleur/detail_project.php?id=<?php echo $project['id'] ;?>&amp; titre=<?php echo $project['nom'] ;?>" class="btn ml-5">details</a>
+
               </div>
           </div>
           <?php

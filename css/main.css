@@ -97,7 +97,10 @@ textarea {
 
 
                  /*---------style index_vue------------------*/
-
+#menu
+{
+    border-bottom: 1px solid rgb(244,243,242);
+}
 #menu a
 {
     color:rgb(189,162,83);
@@ -151,7 +154,11 @@ body{
     float: right;
     position:absolute;
     right: 40px;
-    top:25px;
+    top:7px;
+ }
+ .supprimer-projet
+ {
+   padding: 0px;
  }
 
 

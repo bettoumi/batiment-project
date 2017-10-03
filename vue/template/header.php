@@ -17,7 +17,7 @@
         <link href="https://fonts.googleapis.com/css?family=Catamaran|Libre+Franklin|Ultra" rel="stylesheet"> 
          <script src="https://use.fontawesome.com/31aae1704d.js"></script>
 
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
 
     </head>
     <body>
@@ -30,13 +30,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Accuiell </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">s'inscrire</a>
+        <a class="nav-link" href="corbeill.php">corbeil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"></a>
+        <a class="nav-link" href="">s'inscrire</a>
       </li>
     </ul>
     
