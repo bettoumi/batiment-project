@@ -11,8 +11,9 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
 
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+          
         <link rel="stylesheet" href="../css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Catamaran|Libre+Franklin|Ultra" rel="stylesheet"> 
          <script src="https://use.fontawesome.com/31aae1704d.js"></script>

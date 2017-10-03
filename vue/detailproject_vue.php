@@ -10,7 +10,7 @@
              <!-- ///////////////////////////////////: -->
 
             <div class="mx-auto mb-5" style="width: 200px;">
-             <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal" data-whatever="projet:<?php echo $nom_project?>">ajouter etape</button>
+             <button type="button" class="btn" data-toggle="modal" data-target="#ajoutetape" data-whatever="projet:<?php echo $nom_project?>">ajouter etape</button>
 			
             </div>
 			            <!-- madal add steps -->
@@ -18,7 +18,7 @@
 
             
 
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade" id="ajoutetape" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog" role="document">
 			    <div class="modal-content">
 			      <div class="modal-header">
@@ -130,7 +130,7 @@
 						        </button>
 						      </div>
 						      <div class="modal-body">
-						        <form action="add_project.php" method="post">
+						        <form action="" method="post">
 						          <input type="hidden" name="idetapesup" value="<?php echo $step['id'];?> ">
 						          <input type="hidden" name="idproject_etape" value="<?php echo $id_project;?> ">
 
@@ -191,7 +191,7 @@
 						        </button>
 						      </div>
 						      <div class="modal-body">
-						        <form action="add_project.php" method="post">
+						        <form action="" method="post">
 						          <input type="hidden" name="idtache" value="<?php echo $tache['id'];?> ">
 						          <input type="hidden" name="idetape" value="<?php echo $step['id'];?> ">
 

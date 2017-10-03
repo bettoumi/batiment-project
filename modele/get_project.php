@@ -75,11 +75,7 @@
    {
 
       $bdd=connex_bdd();
-       var_dump($nomtache); 
-       var_dump($idetape);
        
-        var_dump($idprojet); 
-
         $req5 = $bdd->prepare('INSERT INTO taches( nomtache, idetape, idprojet) VALUES(:nomtache, :idetape, :idprojet)');
 
 			$req5->execute(array(
@@ -100,21 +96,19 @@
    function supprimer_etape($idetapesup,$idproject_etape)
    {
        $bdd=connex_bdd();
-       var_dump($idetapesup);
-      var_dump($idproject_etape);
-      $req8= $bdd->prepare('DELETE  FROM taches WHERE idetape=? AND idprojet=?');
-
-     $req8->execute(array(
-
-			     $idetapesup, $idproject_etape));
-			
+       
 
        $req6 = $bdd->prepare('DELETE  FROM etapes_projet WHERE id=? AND idprojet=?');
 
 	  $req6->execute(array(
 
 			     $idetapesup, $idproject_etape));
-			
+		$req8= $bdd->prepare('DELETE  FROM taches WHERE idetape=? AND idprojet=?');
+
+     $req8->execute(array(
+
+			     $idetapesup, $idproject_etape));
+				
 
 
    }

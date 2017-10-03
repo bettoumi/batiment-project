@@ -3,8 +3,7 @@ require '../modele/get_project.php';
 include_once '../vue/template/header.php';
  
 
-if(isset($_GET['id']) AND isset($_GET['titre']))
-{ $id_project=htmlspecialchars($_GET['id']);
+ $id_project=htmlspecialchars($_GET['id']);
  $nom_project=htmlspecialchars($_GET['titre']);
  // idetape=htmlspecialchars($_POST['idetape']);
  // echo $idetape;
@@ -15,7 +14,7 @@ if(isset($_GET['id']) AND isset($_GET['titre']))
    $req2=affiche_tache();
  // header('location:add_project.php');
  
-}
+
 
 
 
@@ -58,7 +57,7 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
 }
  
  
- ///add spots for steps
+ 						///add spots for steps
  if(isset($_POST['nomtache']) AND isset($_POST['idetape']) AND isset($_POST['idprojet']) )
 {
    
@@ -69,8 +68,7 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
  
 
   add_tache($nomtache, $idetape, $idprojet);
-    // header('location: add_project.php?id=echo $id_project; &amp; titre= echo $nom_project ;');
-   // var_dump($)
+    
   
 }
 
@@ -97,9 +95,7 @@ if(isset($_POST['idtache'])AND isset($_POST['idetape']))
     
      $idtache=htmlspecialchars($_POST['idtache']);
      $idetape=htmlspecialchars($_POST['idetape']);
-    
-
-     supprimer_tache($idtache, $idetape);
+         supprimer_tache($idtache, $idetape);
 
        // header('location: add_project.php');
   }
