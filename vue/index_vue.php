@@ -71,11 +71,11 @@
 
                    <!-- BUTTON AND MODAL DELETE PROJECT -->
 
-                      <button type="button" class="btn supprimer-projet" data-toggle="modal" data-target="#del<?php echo $project['id']?>" data-whatever="@mdo"><i class="fa fa-trash-o mr-5"></i>
+                      <button type="button" class="btn supprimer-projet" data-toggle="modal" data-target="#del<?php echo $project['id'];?>" data-whatever="@mdo"><i class="fa fa-trash-o mr-5"></i>
                     </button>
 
 
-                       <div class="modal fade" id="del<?php echo $project['id']?>" tabindex="-1" role="dialog" aria-labelledby="deletModalLabel" aria-hidden="true">
+                       <div class="modal fade" id="del<?php echo $project['id'];?>" tabindex="-1" role="dialog" aria-labelledby="deletModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -85,7 +85,7 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              <form action="add_project.php" method="post">
+                              <form action="../controleur/add_project.php" method="post">
                                                                
                                   <input type="hidden" class="form-control" id="recipient-name"  value="<?php echo $project['id'] ;?>" name="idprojetsup">
                                  
@@ -103,11 +103,7 @@
 
                                 <!-- END MODAL  -->
                  
-               <!--   <form action="add_project.php" method="post" >
-                   <input type="hidden" name="idp" value="<?php echo $project['id'] ;?>">
-                    <input type="hidden" name="nomp" value="<?php echo $project['nom'] ;?>">
-                    <button type="submit">détails</button>
-                 </form> -->
+               
                 <a href="add_project.php?id=<?php echo $project['id'] ;?>&amp; titre=<?php echo $project['nom'] ;?>" class="btn ml-5">details</a>
 
               </div>

@@ -82,7 +82,8 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
      $idproject_etape=htmlspecialchars($_POST['idproject_etape']);
     
 
-     supprimer_etape($idetapesup, $idproject_etape);
+     supprimer_etape($idetapesup, $idproject_etape); 
+     
      header('location: ');
 
 
@@ -105,8 +106,9 @@ if(isset($_POST['idtache'])AND isset($_POST['idetape']))
 
 if(isset($_POST['idprojetsup']))
 {
-
+      
     $idprojetsup=htmlspecialchars($_POST['idprojetsup']);
+      var_dump($idprojetsup);
      supprimer_projet($idprojetsup);
     header('location: index.php');
 }

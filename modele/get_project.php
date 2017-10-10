@@ -100,14 +100,12 @@
 
        $req6 = $bdd->prepare('DELETE  FROM etapes_projet WHERE id=? AND idprojet=?');
 
-	  $req6->execute(array(
+	  $req6->execute(array($idetapesup, $idproject_etape));
+		// $req8= $bdd->prepare('DELETE  FROM taches WHERE idetape=? AND idprojet=?');
 
-			     $idetapesup, $idproject_etape));
-		$req8= $bdd->prepare('DELETE  FROM taches WHERE idetape=? AND idprojet=?');
+  //    $req8->execute(array(
 
-     $req8->execute(array(
-
-			     $idetapesup, $idproject_etape));
+		// 	     $idetapesup, $idproject_etape));
 				
 
 
@@ -134,24 +132,26 @@
      // delete project and its steps and spots
 function  supprimer_projet($idprojetsup)
 {
-
+     
     $bdd=connex_bdd();
+    $req3 = $bdd->prepare('DELETE  FROM taches WHERE  idprojet=?');
+
+			$req3->execute(array(
+
+			     $idprojetsup));
+	$req2 = $bdd->prepare('DELETE  FROM etapes_projet WHERE idprojet=?');
+
+	  $req2->execute(array(
+
+			    $idprojetsup));
     $req = $bdd->prepare('DELETE  FROM projets WHERE id=? ');
 
 			$req->execute(array(
 
 			     $idprojetsup));
-     $req2 = $bdd->prepare('DELETE  FROM etapes_projet WHERE idprojet=?');
+     
 
-	  $req2->execute(array(
-
-			    $idprojetsup));
-
-	  $req3 = $bdd->prepare('DELETE  FROM taches WHERE  idprojet=?');
-
-			$req3->execute(array(
-
-			     $idprojetsup));
+	  
 
 
 
