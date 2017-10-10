@@ -52,7 +52,7 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
  var_dump( $idprojet);
 
   add_etape($nometape, $idprojet);
-   // header('location: add_project.php');
+   header('location: ');
   
 }
  
@@ -68,7 +68,7 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
  
 
   add_tache($nomtache, $idetape, $idprojet);
-    
+   header('location: '); 
   
 }
 
@@ -83,7 +83,7 @@ if(isset($_POST['nom']) AND isset($_POST['client']) AND isset($_POST['date_debut
     
 
      supprimer_etape($idetapesup, $idproject_etape);
-     // header('location: add_project.php');
+     header('location: ');
 
 
   }
@@ -97,7 +97,7 @@ if(isset($_POST['idtache'])AND isset($_POST['idetape']))
      $idetape=htmlspecialchars($_POST['idetape']);
          supprimer_tache($idtache, $idetape);
 
-       // header('location: add_project.php');
+        header('location: ');
   }
    	
   	// DELETE a project and its steps and tasks
