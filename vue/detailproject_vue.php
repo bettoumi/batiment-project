@@ -117,7 +117,9 @@
 
 			    			<!--button for delete steps ==============================================  -->
 
-			    			<button type="button" class="btn supprimer" data-toggle="modal" data-target="#supp<?php echo $step['id'];?>" data-whatever="suppetap"><i class="fa fa-trash ml-5" aria-hidden="true"></i></button>
+			    			
+
+			    			<button type="button" class="btn supprimer" data-toggle="modal" data-target="#supp<?php echo $step['id'] ;?>" data-whatever="<?php echo $step['nometape'] ;?>"><i class="fa fa-trash" aria-hidden="true"></i></button>
 
 
 						<div class="modal fade" id="supp<?php echo $step['id'];?>" tabindex="-1" role="dialog" aria-labelledby="supetape<?php echo $step['id'];?>" aria-hidden="true">
